@@ -1,11 +1,236 @@
 ---
-title: "Final-project"
+title: "Position compared to Injury"
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Soccer injuries may vary depending on the position.The following data was used with the tidyverse, plotly, and ggplot2 packages. Then, I selected the important data columns to analyze the relationship between position and injuries in 6 different leagues. The 6 leagues were Premier League, Bundesliga, La Liga, Ligue 1, and Serie A. This data was originally sourced from Rotowire datasets. This was then used to visualize positions compared to injuries in an inuitive format that clearly shows the relationship.I found that the most common injuries are lower body and they mostly happen to midfileders
 
 ```{r}
-1 + 1
+#| echo: false
+#| output: false
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(ggiraph)
+library(gganimate)
+library(dplyr)
+
+
+soccer_data <- read_excel("../Final-project/soccer-injuries.xlsx")
+prem_league_stats <- read_excel("../Final-project/prem_league_stats.xlsx")
 ```
+
+```{r}
+#| echo: false
+#| output: false
+update_soccer_data <- soccer_data|>
+  mutate(Amount_knee_injury = nrow(soccer_data[soccer_data$Injury == 'Knee',]))|>
+  mutate(Amount_Leg_injury = nrow(soccer_data[soccer_data$Injury == 'Leg',]))|>
+  mutate(Amount_Groin_injury = nrow(soccer_data[soccer_data$Injury == 'Groin',]))|>
+  mutate(Amount_Face_injury = nrow(soccer_data[soccer_data$Injury == 'Face',]))|>
+  mutate(Amount_Hamstring_injury = nrow(soccer_data[soccer_data$Injury == 'Hamstring',]))|>
+  mutate(Amount_Thigh_injury = nrow(soccer_data[soccer_data$Injury == 'Thigh',]))|>  
+  mutate(Amount_Hip_injury = nrow(soccer_data[soccer_data$Injury == 'Hip',]))|>  
+  mutate(Amount_Wrist_injury = nrow(soccer_data[soccer_data$Injury == 'Wrist',]))|>  
+  mutate(Amount_Ankle_injury = nrow(soccer_data[soccer_data$Injury == 'Ankle',]))|> 
+  mutate(Amount_Calf_injury = nrow(soccer_data[soccer_data$Injury == 'Calf',]))|>
+  mutate(Amount_Shoulder_injury = nrow(soccer_data[soccer_data$Injury == 'Shoulder',]))|>
+  mutate(Amount_Foot_injury = nrow(soccer_data[soccer_data$Injury == 'Foot',]))|>  
+  mutate(Amount_Back_injury = nrow(soccer_data[soccer_data$Injury == 'Back',]))|>  
+  mutate(Amount_Hand_injury = nrow(soccer_data[soccer_data$Injury == 'Hand',]))|>
+  mutate(Amount_Achilles_injury = nrow(soccer_data[soccer_data$Injury == 'Achilles',]))|>
+  mutate(Amount_Quadriceps_injury = nrow(soccer_data[soccer_data$Injury == 'Quadriceps',]))|>
+  mutate(Amount_Abdomen_injury = nrow(soccer_data[soccer_data$Injury == 'Abdomen',]))|>
+  mutate(Amount_Lower_Leg_injury = nrow(soccer_data[soccer_data$Injury == 'Lower Leg',]))|>
+  mutate(Amount_Ribs_injury = nrow(soccer_data[soccer_data$Injury == 'Ribs',]))|>
+  mutate(lower_body = Injury %in% c("Knee", "Leg", "Calf", "Foot", "Ankle", "Hamstring", "Thigh", "Quadriceps", "Achilles", "Lower Leg"))|>
+  mutate(upper_body = Injury %in% c("Hand", "Hip", "Groin", "Wrist", "Face", "Shoulder", "Abdomen", "Back", "Ribs"))|>
+  mutate(Amount_knee_defense = Injury %in% c("Knee"))|>
+  mutate(Amount_Thigh_defense = Injury %in% c("Thigh") )|>
+  mutate(Amount_Ankle_defense = Injury %in% c("Ankle"))|>
+  mutate(Amount_Hamstring_defense = Injury %in% c("Hamstring"))
+
+```
+
+### Injury Plot
+
+This plot shows all the types of injuries compared position with position at the x axis and injuries at the y axis. Then i separated the graph by league to show three different Leagues. These leagues are Premier League, Bundesliga, and MLS. You can see by the amount of dots that most injuries happen in Premier League and Bundesliga because those are more competetive leagues.
+Leagues:  **Bundesliga**, **MLS**, and **Premier League**.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+int_plot <- update_soccer_data|>
+select(Players, League, Team, POS, Injury, lower_body)|>
+drop_na(League, Team)|>
+filter(League == c("Premier", "Bundesliga", "MLS"))|> 
+ggplot(mapping = aes(x = POS,
+                     y = Injury,
+                     text = paste("Name:",Players, "\n",
+                                  "Team:", Team, "\n",
+                                  "Pos:", POS, "\n"),
+                      fill = Team)) +
+geom_point(size = 1.75)+
+facet_wrap_interactive(~League)+
+labs(title = "Different Soccer Injuries Related to Position Separated by League",
+     x = "Positions",
+     y = "Type of Injury")
+ggplotly(int_plot, tooltip = "text")
+
+ 
+ 
+```
+
+### Injury Plot 2
+
+This plot is the same as above except there are three different 
+Leagues: **La Liga**, **Ligue 1**, and **Serie A**.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+int_plot <- update_soccer_data|>
+select(Players, League, Team, POS, Injury, lower_body)|>
+drop_na(League, Team)|>
+filter(League == c("Ligue 1", "La Liga", "Serie A"))|>
+ggplot(mapping = aes(x = POS,
+                     y = Injury,
+                     text = paste("Name:",Players, "\n",
+                                  "Team:", Team, "\n",
+                                  "Pos:", POS, "\n",
+                                  "Injury:", Injury, "\n"),
+                     fill = Team)) +
+geom_point(size = 1.75)+
+facet_wrap_interactive(~League)+
+labs(title = "Different Soccer Injuries Related to Position Separated by League",
+     x = "Positions",
+     y = "Type of Injury")
+ggplotly(int_plot, tooltip = "text")
+
+
+ 
+ 
+```
+
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+int_prem_plot <- prem_league_stats|>
+select(part_of_body, injury, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+ggplot(mapping = aes(x = position,
+                     y = injury,
+                     text = paste("Name:",full_name, "\n",
+                                  "Team:", `Current Club`, "\n",
+                                  "Pos:", position, "\n",
+                                  "Injury:", injury, "\n"),
+                     color = `Current Club`)) +
+geom_point(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to Position",
+     x = "Positions",
+     y = "Type of Injury")
+ggplotly(int_prem_plot, tooltip = "text")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+filter(position == "Goalkeeper")|>
+ggplot(mapping = aes(x = part_of_body,
+                     fill = injury)) +
+geom_bar(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to Defense",
+     x = "Part of Body",
+     y = "Total number of Injuries")
+```
+
+
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+filter(position == "Defender")|>
+ggplot(mapping = aes(x = part_of_body,
+                     fill = injury)) +
+geom_bar(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to Defense",
+     x = "Part of Body",
+     y = "Total number of Injuries")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+filter(position == "Midfielder")|>
+ggplot(mapping = aes(x = part_of_body,
+                     fill = injury)) +
+geom_bar(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to Defense",
+     x = "Part of Body",
+     y = "Total number of Injuries")
+```
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+filter(position == "Forward")|>
+ggplot(mapping = aes(x = part_of_body,
+                     fill = injury)) +
+geom_bar(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to Defense",
+     x = "Part of Body",
+     y = "Total number of Injuries")
+```
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+ggplot(mapping = aes(x = age)) +
+geom_bar() +
+labs(title = "Total Soccer Injuries Related to Age ",
+     x = "Age",
+     y = "Total number of Injuries")
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+summarize() |>
+ggplot(mapping = aes(x = age,
+                     y = count)) +
+geom_bar() +
+labs(title = "Total Soccer Injuries Related to Age ",
+     x = "Age",
+     y = "Total number of Injuries")
+```
+
+
