@@ -1,0 +1,36 @@
+---
+title: "Age"
+---
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(ggiraph)
+library(gganimate)
+library(dplyr)
+
+prem_league_stats <- read_excel("../Final-project/prem_league_stats.xlsx")
+```
+
+
+Soccer injuries may vary depending on the age of the player. The following data was used with the tidyverse, plotly, and ggplot2 packages. Then I selected the age and injury column to figure out if there is a relationship between injuries and age in the **Premier League**. This was then used to visualize injuries compared to age in an inuitive format that clearly shows the relationship between the two variables.
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(injury, age)|>
+drop_na(injury)|>
+ggplot(mapping = aes(x = age)) +
+geom_bar() +
+labs(title = "Total Soccer Injuries Related to Age ",
+     x = "Age",
+     y = "Total number of Injuries",
+     caption = "Source: Footystats")
+```
+
+
+This data clearly shows that most injuries happen between the mid 20's and low 30's. This could be because young players under the age of 20 have less confidence to play more aggressive in games. Additionally, older players get weaker and slower as they age above 30.
