@@ -1,0 +1,95 @@
+---
+title: "Injuries"
+---
+
+Soccer injuries may vary depending on the position. The following data was used with the tidyverse, plotly, and ggplot2 packages. Then, I selected the important data columns to analyze the relationship between position and injuries in the **Premier League**. This was then used to visualize positions compared to injuries in an inuitive format that clearly shows the relationship. I did this by putting the positions from the beginning to end of field, and the injuries from toes to heads on the body.
+
+Note that in both of the following plots:
+
+**Other** injuries are illness or tiredness (Plot 1)
+
+**Other_body** is anywhere on the body where the player feels ill or tired (Plot 2)
+
+Also, these plots are interactive so if the reader hovers above each of the points, they can see the players injury, position, and club.
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(ggiraph)
+library(gganimate)
+library(dplyr)
+
+prem_league_stats <- read_excel("../Final-project/prem_league_stats.xlsx")
+```
+### Injury Plot 1 (Specific)
+
+This plot shows all the types of injuries compared to position, with position at the x axis, and injuries at the y axis. Then, I color coded the dots to represent the current club that the player is on.
+
+Note: "Other" injuries are illness or tiredness
+
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_plot_int <- prem_league_stats|>
+select(part_of_body, injury, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+ggplot(mapping = aes(x = position,
+                     y = injury,
+                     text = paste("Name:",full_name, "\n",
+                                  "Team:", `Current Club`, "\n",
+                                  "Pos:", position, "\n",
+                                  "Injury:", injury, "\n"),
+                     color = `Current Club`)) +
+geom_jitter(size = 1.5)+
+labs(title = "Different Soccer Injuries Related to Position",
+     x = "Positions",
+     y = "Type of Injury")
+ggplotly(prem_league_plot_int, tooltip = "text")
+```
+
+From this, we can takeaway that:
+
+There are more **thigh** injuries in defending
+
+There are more **knee** injuries in the forward position
+
+There are more **thigh** injuries in goalkeeping
+
+There are more **thigh** injuries in the midfielding position
+
+### Injury Plot 2 (Broad)
+
+
+This is a more broad scatterplot of the one above. Instead of each injury being listed, I have grouped them by the region of body where the injury has happened.
+
+Note: "Other_body" is anywhere on the body where the player feels ill or tired
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_plot_int <- prem_league_stats|>
+select(part_of_body, injury, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+ggplot(mapping = aes(x = position,
+                     y = part_of_body,
+                     text = paste("Name:",full_name, "\n",
+                                  "Team:", `Current Club`, "\n",
+                                  "Pos:", position, "\n",
+                                  "Injury:", injury, "\n"),
+                     color = `Current Club`)) +
+geom_jitter(size = 1.5)+
+labs(title = "Different Soccer Injuries Related to Position",
+     x = "Positions",
+     y = "Type of Injury")
+ggplotly(prem_league_plot_int, tooltip = "text")
+```
+
+From this, we can takeaway that there are more lower body injuries for all of the positions

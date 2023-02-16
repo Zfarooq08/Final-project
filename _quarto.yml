@@ -2,15 +2,19 @@ project:
   type: website
 
 website:
-  title: "Injuries, Goals and Something"
+  title: "How Do Position and Age Correlate With Soccer Injuries ?"
   navbar:
     left:
       - about.qmd
-      - href: index.qmd
-        text: Home
-      - goals.qmd
-      - one_more.qmd
-      - conclusion.qmd
+      - home.qmd
+      - text: "Injuries"
+        menu:
+            - injuries.qmd
+            - goalkeeper.qmd
+            - defender.qmd
+            - midfielder.qmd
+            - forwarder.qmd
+      - age.qmd
 
 format:
   html:

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How Do Position and Age Correlate With Soccer Injuries ? - Home</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">How Do Position and Age Correlate With Soccer Injuries ?</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./home.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-injuries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Injuries</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-injuries">    
+        <li>
+    <a class="dropdown-item" href="./injuries.html">
+ <span class="dropdown-text">Injuries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./goalkeeper.html">
+ <span class="dropdown-text">Goalkeeper</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./defender.html">
+ <span class="dropdown-text">Defender</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./midfielder.html">
+ <span class="dropdown-text">Midfielder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./forwarder.html">
+ <span class="dropdown-text">Forward</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./age.html">
+ <span class="menu-text">Age</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#this-is-one-of-my-main-plots-that-you-can-find-on-the-injuries-page-with-further-explanation" id="toc-this-is-one-of-my-main-plots-that-you-can-find-on-the-injuries-page-with-further-explanation" class="nav-link active" data-scroll-target="#this-is-one-of-my-main-plots-that-you-can-find-on-the-injuries-page-with-further-explanation">This is one of my main plots that you can find on the injuries page with further explanation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Home</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The <strong>Premier League</strong> is located in England and is one of the most competetive leagues out of all the soccer leagues. There are 20 teams in the Premier League, and I analyzed the positions and ages of all the players in the Premier League who suffered from an injury in the 2022/2023 season. Using data from Footystats, I found out that the positions that generate the most injuries are Defenders and Midfielders mainly in the lower body. Also, most injuries happen between the ages of 20 and 30</p>
+<section id="this-is-one-of-my-main-plots-that-you-can-find-on-the-injuries-page-with-further-explanation" class="level3">
+<h3 class="anchored" data-anchor-id="this-is-one-of-my-main-plots-that-you-can-find-on-the-injuries-page-with-further-explanation">This is one of my main plots that you can find on the injuries page with further explanation</h3>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4020da9e982436b7b6d0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4020da9e982436b7b6d0">{"x":{"data":[{"x":[3.85895865019411,3.92173726875335,0.60665340591222,1.33223557565361],"y":[11.9032369131222,9.89952411036938,1.61975855976343,11.3644843684509],"text":["Name: Junior Stanislas <br /> Team: AFC Bournemouth <br /> Pos: Midfielder <br /> Injury: other <br />","Name: Lewis Cook <br /> Team: AFC Bournemouth <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Lloyd Kelly <br /> Team: AFC Bournemouth <br /> Pos: Defender <br /> Injury: calf <br />","Name: Marcos Senesi <br /> Team: AFC Bournemouth <br /> Pos: Defender <br /> Injury: lower_back <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"AFC Bournemouth","legendgroup":"AFC Bournemouth","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.32342809326947,2.04162569567561,4.20769523438066,2.02391020376235],"y":[14.3558733468875,9.80352282747626,9.67766635604203,14.1138389144093],"text":["Name: Emile Smith Rowe <br /> Team: Arsenal <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Gabriel Jesus <br /> Team: Arsenal <br /> Pos: Forward <br /> Injury: knee <br />","Name: Mohamed Elneny <br /> Team: Arsenal <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Reiss Nelson <br /> Team: Arsenal <br /> Pos: Forward <br /> Injury: thigh <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(234,131,49,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(234,131,49,1)"}},"hoveron":"points","name":"Arsenal","legendgroup":"Arsenal","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.29644140023738,0.935656058043241],"y":[2.19219853114337,11.7432885136455],"text":["Name: Diego Carlos <br /> Team: Aston Villa <br /> Pos: Defender <br /> Injury: calf <br />","Name: Tyrone Mings <br /> Team: Aston Villa <br /> Pos: Defender <br /> Injury: other <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(216,144,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(216,144,0,1)"}},"hoveron":"points","name":"Aston Villa","legendgroup":"Aston Villa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.726600541174412,2.69073440041393],"y":[13.9367394551635,4.12268620487303],"text":["Name: Pontus Jansson <br /> Team: Brentford <br /> Pos: Defender <br /> Injury: thigh <br />","Name: Thomas Strakosha <br /> Team: Brentford <br /> Pos: Goalkeeper <br /> Injury: foot <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(192,155,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(192,155,0,1)"}},"hoveron":"points","name":"Brentford","legendgroup":"Brentford","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.80783461555839,2.11968958973885,4.03088732827455,1.15305507816374],"y":[11.8031665809453,1.64846246037632,2.84996391851455,12.1926612876356],"text":["Name: Adam David Lallana <br /> Team: Brighton & Hove Albion <br /> Pos: Midfielder <br /> Injury: other <br />","Name: Danny Welbeck <br /> Team: Brighton & Hove Albion <br /> Pos: Forward <br /> Injury: calf <br />","Name: Enock Mwepu <br /> Team: Brighton & Hove Albion <br /> Pos: Midfielder <br /> Injury: chest <br />","Name: Levi Samuels Colwill <br /> Team: Brighton & Hove Albion <br /> Pos: Defender <br /> Injury: other <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(163,165,0,1)"}},"hoveron":"points","name":"Brighton & Hove Albion","legendgroup":"Brighton & Hove Albion","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.11557123977691,4.20994989685714,4.31428829263896,3.11259016655386,0.814643714018166,4.33927034866065,4.33185946661979,1.72363906595856,1.38303199522197],"y":[10.2972837740555,9.99290257561952,13.8758267713711,5.98924246262759,11.9952357128263,1.70936893913895,14.2767503825948,10.2676297314465,9.77723085936159],"text":["Name: Armando Broja <br /> Team: Chelsea <br /> Pos: Forward <br /> Injury: knee <br />","Name: Christian Pulisic <br /> Team: Chelsea <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Denis Zakaria <br /> Team: Chelsea <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Edouard Mendy <br /> Team: Chelsea <br /> Pos: Goalkeeper <br /> Injury: hand <br />","Name: Kalidou Koulibaly <br /> Team: Chelsea <br /> Pos: Defender <br /> Injury: other <br />","Name: Mateo Kovačić <br /> Team: Chelsea <br /> Pos: Midfielder <br /> Injury: calf <br />","Name: N'Golo Kanté <br /> Team: Chelsea <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Raheem Sterling <br /> Team: Chelsea <br /> Pos: Forward <br /> Injury: knee <br />","Name: Wesley Fofana <br /> Team: Chelsea <br /> Pos: Defender <br /> Injury: knee <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"Chelsea","legendgroup":"Chelsea","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.735806713812053,0.626042043976486,1.08944705296308,1.62737816683948,3.90379874762148],"y":[11.0849023848772,1.94089669696987,1.80257878750563,13.7732201417908,12.1410987120122],"text":["Name: Chris Richards <br /> Team: Crystal Palace <br /> Pos: Defender <br /> Injury: lower_back <br />","Name: Joachim Andersen <br /> Team: Crystal Palace <br /> Pos: Defender <br /> Injury: calf <br />","Name: Joel Ward <br /> Team: Crystal Palace <br /> Pos: Defender <br /> Injury: calf <br />","Name: Wilfried Zaha <br /> Team: Crystal Palace <br /> Pos: Forward <br /> Injury: thigh <br />","Name: Will Hughes <br /> Team: Crystal Palace <br /> Pos: Midfielder <br /> Injury: other <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(57,182,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(57,182,0,1)"}},"hoveron":"points","name":"Crystal Palace","legendgroup":"Crystal Palace","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.76042822692543,3.75017274711281,0.63148575052619],"y":[13.7749189021066,10.6345573846251,10.1003795739263],"text":["Name: Dominic Calvert-Lewin <br /> Team: Everton <br /> Pos: Forward <br /> Injury: thigh <br />","Name: James Garner <br /> Team: Everton <br /> Pos: Midfielder <br /> Injury: lower_back <br />","Name: Nathan Patterson <br /> Team: Everton <br /> Pos: Defender <br /> Injury: knee <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,187,78,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,187,78,1)"}},"hoveron":"points","name":"Everton","legendgroup":"Everton","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.63940112311393,3.67699359059334,4.13186681848019,1.70597513373941],"y":[4.02891125585884,7.62199513521045,4.09044726230204,1.68319447096437],"text":["Name: Aleksandar Mitrović <br /> Team: Fulham <br /> Pos: Forward <br /> Injury: foot <br />","Name: Neeskens Kebano <br /> Team: Fulham <br /> Pos: Midfielder <br /> Injury: heel <br />","Name: Tom Cairney <br /> Team: Fulham <br /> Pos: Midfielder <br /> Injury: foot <br />","Name: Willian <br /> Team: Fulham <br /> Pos: Forward <br /> Injury: calf <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,125,1)"}},"hoveron":"points","name":"Fulham","legendgroup":"Fulham","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.17354848496616,4.32333305664361,0.83807838074863,2.22871717754751,3.99213641565293,0.95327464863658,2.25265220291913,2.20073205623776],"y":[8.77454298753291,0.915582059882581,12.3036260748282,13.8531170770526,12.3318629726768,6.9110564397648,3.99753399435431,1.39845761004835],"text":["Name: Adam Forshaw <br /> Team: Leeds United <br /> Pos: Midfielder <br /> Injury: hip <br />","Name: Archie Gray <br /> Team: Leeds United <br /> Pos: Midfielder <br /> Injury: ankle <br />","Name: Liam Cooper <br /> Team: Leeds United <br /> Pos: Defender <br /> Injury: other <br />","Name: Luis Fernando Sinisterra Lucumí <br /> Team: Leeds United <br /> Pos: Forward <br /> Injury: thigh <br />","Name: Marc Roca Junqué <br /> Team: Leeds United <br /> Pos: Midfielder <br /> Injury: other <br />","Name: Pascal Struijk <br /> Team: Leeds United <br /> Pos: Defender <br /> Injury: head <br />","Name: Rodrigo <br /> Team: Leeds United <br /> Pos: Forward <br /> Injury: foot <br />","Name: Sonny Perkins <br /> Team: Leeds United <br /> Pos: Forward <br /> Injury: ankle <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,193,163,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,193,163,1)"}},"hoveron":"points","name":"Leeds United","legendgroup":"Leeds United","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.74620441440493,0.757607466541231,0.839679629169405,3.9548992915079],"y":[13.6192291265354,1.94107580371201,2.31070727426559,2.18952871933579],"text":["Name: Boubakary Soumaré <br /> Team: Leicester City <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: James Justin <br /> Team: Leicester City <br /> Pos: Defender <br /> Injury: calf <br />","Name: Jonny Evans <br /> Team: Leicester City <br /> Pos: Defender <br /> Injury: calf <br />","Name: Youri Tielemans <br /> Team: Leicester City <br /> Pos: Midfielder <br /> Injury: calf <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Leicester City","legendgroup":"Leicester City","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.25054594948888,0.968484945595264,4.22608337327838,1.0711357107386],"y":[14.1927601255476,14.0603441298008,8.99671208336949,4.75199473500252],"text":["Name: Arthur Henrique Ramos de Oliveira Melo <br /> Team: Liverpool <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Ibrahima Konaté <br /> Team: Liverpool <br /> Pos: Defender <br /> Injury: thigh <br />","Name: Thiago Alcantara <br /> Team: Liverpool <br /> Pos: Midfielder <br /> Injury: hip <br />","Name: Virgil van Dijk <br /> Team: Liverpool <br /> Pos: Defender <br /> Injury: hamstring <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,224,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,186,224,1)"}},"hoveron":"points","name":"Liverpool","legendgroup":"Liverpool","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.28484067432582,3.7900820421055,1.1210622055456],"y":[12.1147712560371,13.2758756788448,14.1538002189249],"text":["Name: Erling Haaland <br /> Team: Manchester City <br /> Pos: Forward <br /> Injury: other <br />","Name: Jack Grealish <br /> Team: Manchester City <br /> Pos: Midfielder <br /> Injury: shoulder <br />","Name: John Stones <br /> Team: Manchester City <br /> Pos: Defender <br /> Injury: thigh <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,176,246,1)"}},"hoveron":"points","name":"Manchester City","legendgroup":"Manchester City","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.14823422133923,2.17197124939412,4.06702834591269,3.61979593299329,4.34648215752095],"y":[9.15849373396486,9.20291811004281,0.813265564292669,9.62931600436568,11.6622842384502],"text":["Name: Anthony Martial <br /> Team: Manchester United <br /> Pos: Forward <br /> Injury: hip <br />","Name: Antony Matheus dos Santos <br /> Team: Manchester United <br /> Pos: Forward <br /> Injury: hip <br />","Name: Christian Eriksen <br /> Team: Manchester United <br /> Pos: Midfielder <br /> Injury: ankle <br />","Name: Donny van de Beek <br /> Team: Manchester United <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Scott McTominay <br /> Team: Manchester United <br /> Pos: Midfielder <br /> Injury: other <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(53,162,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(53,162,255,1)"}},"hoveron":"points","name":"Manchester United","legendgroup":"Manchester United","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.94049487709999,1.68304589614272,0.976318100094795,1.24922659564763,1.02402628548443,3.97580170296133,0.667427498660982,3.83797217011452],"y":[9.99258663356304,14.0815038580447,9.93474161792546,12.1473507771268,11.7620389580727,13.9749707164243,3.95038956850767,5.67020571585745],"text":["Name: Allan Saint-Maximin <br /> Team: Newcastle United <br /> Pos: Forward <br /> Injury: knee <br />","Name: Callum Wilson <br /> Team: Newcastle United <br /> Pos: Forward <br /> Injury: thigh <br />","Name: Emil Krafth <br /> Team: Newcastle United <br /> Pos: Defender <br /> Injury: knee <br />","Name: Jamal Lascelles <br /> Team: Newcastle United <br /> Pos: Defender <br /> Injury: other <br />","Name: Javier Manquillo Gaitán <br /> Team: Newcastle United <br /> Pos: Defender <br /> Injury: other <br />","Name: Joseph Willock <br /> Team: Newcastle United <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Matt Targett <br /> Team: Newcastle United <br /> Pos: Defender <br /> Injury: foot <br />","Name: Miguel Ángel Almirón Rejala <br /> Team: Newcastle United <br /> Pos: Midfielder <br /> Injury: hand <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(149,144,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(149,144,255,1)"}},"hoveron":"points","name":"Newcastle United","legendgroup":"Newcastle United","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.3855651602149,2.62553860414773,1.30355915632099,4.01598675120622,0.875879723578691,4.35911198277026,1.23742634039372,2.22069625519216,1.18347042035311],"y":[5.26171695161611,13.7769435008988,9.94406457860023,10.2974572097883,13.8776146087795,12.0980720553547,13.7548099489883,8.8917965631932,14.2724669409916],"text":["Name: Cheikhou Kouyaté <br /> Team: Nottingham Forest <br /> Pos: Midfielder <br /> Injury: hamstring <br />","Name: Dean Henderson <br /> Team: Nottingham Forest <br /> Pos: Goalkeeper <br /> Injury: thigh <br />","Name: Giulian Biancone <br /> Team: Nottingham Forest <br /> Pos: Defender <br /> Injury: knee <br />","Name: Jesse Lingard <br /> Team: Nottingham Forest <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Moussa Niakhate <br /> Team: Nottingham Forest <br /> Pos: Defender <br /> Injury: thigh <br />","Name: Ryan Yates <br /> Team: Nottingham Forest <br /> Pos: Midfielder <br /> Injury: other <br />","Name: Scott McKenna <br /> Team: Nottingham Forest <br /> Pos: Defender <br /> Injury: thigh <br />","Name: Taiwo Micheal Awoniyi <br /> Team: Nottingham Forest <br /> Pos: Forward <br /> Injury: hip <br />","Name: Willy Boly <br /> Team: Nottingham Forest <br /> Pos: Defender <br /> Injury: thigh <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"Nottingham Forest","legendgroup":"Nottingham Forest","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.33801827244461,1.233643062599,1.3039302200079],"y":[1.2107004577294,8.61057505831122,13.8560104828328],"text":["Name: Alex McCarthy <br /> Team: Southampton <br /> Pos: Goalkeeper <br /> Injury: ankle <br />","Name: Juan Larios López <br /> Team: Southampton <br /> Pos: Defender <br /> Injury: hip <br />","Name: Kyle Walker-Peters <br /> Team: Southampton <br /> Pos: Defender <br /> Injury: thigh <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(231,107,243,1)"}},"hoveron":"points","name":"Southampton","legendgroup":"Southampton","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.0470977474004,3.74427009597421,3.90716879181564,4.30695045869797],"y":[9.6539967585355,10.3778139803559,14.3660260537639,0.936113686487079],"text":["Name: Hugo Lloris <br /> Team: Tottenham Hotspur <br /> Pos: Goalkeeper <br /> Injury: knee <br />","Name: Rodrigo Bentancur <br /> Team: Tottenham Hotspur <br /> Pos: Midfielder <br /> Injury: knee <br />","Name: Ryan Sessegnon <br /> Team: Tottenham Hotspur <br /> Pos: Midfielder <br /> Injury: thigh <br />","Name: Yves Bissouma <br /> Team: Tottenham Hotspur <br /> Pos: Midfielder <br /> Injury: ankle <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(250,98,219,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(250,98,219,1)"}},"hoveron":"points","name":"Tottenham Hotspur","legendgroup":"Tottenham Hotspur","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.34457289911807,2.87487639002502,1.61593479830772,2.21166733019054,0.790735714882612,4.13237749859691,1.26543243657798],"y":[12.0563939122483,13.7506247458979,9.75624496750534,2.05935183390975,4.80926932077855,13.313364472799,9.22811404280364],"text":["Name: Aaron Cresswell <br /> Team: West Ham United <br /> Pos: Defender <br /> Injury: other <br />","Name: Alphonse Areola <br /> Team: West Ham United <br /> Pos: Goalkeeper <br /> Injury: thigh <br />","Name: Gianluca Scamacca <br /> Team: West Ham United <br /> Pos: Forward <br /> Injury: knee <br />","Name: Gnaly Maxwell Cornet <br /> Team: West Ham United <br /> Pos: Forward <br /> Injury: calf <br />","Name: Kurt Happy Zouma <br /> Team: West Ham United <br /> Pos: Defender <br /> Injury: hamstring <br />","Name: Lucas Tolentino Coelho de Lima <br /> Team: West Ham United <br /> Pos: Midfielder <br /> Injury: shoulder <br />","Name: Naif Aguerd <br /> Team: West Ham United <br /> Pos: Defender <br /> Injury: hip <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,98,188,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,98,188,1)"}},"hoveron":"points","name":"West Ham United","legendgroup":"West Ham United","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.10887178201228,3.65956006105989,1.81845627687871,1.69838316701353,1.65991564597934],"y":[9.06341870892793,9.01197537854314,4.81428418923169,1.01318627074361,10.0989160783589],"text":["Name: Boubacar Traore <br /> Team: Wolverhampton Wanderers <br /> Pos: Midfielder <br /> Injury: hip <br />","Name: Daniel Castelo Podence <br /> Team: Wolverhampton Wanderers <br /> Pos: Midfielder <br /> Injury: hip <br />","Name: Hee-Chan Hwang <br /> Team: Wolverhampton Wanderers <br /> Pos: Forward <br /> Injury: hamstring <br />","Name: Pedro Lomba Neto <br /> Team: Wolverhampton Wanderers <br /> Pos: Forward <br /> Injury: ankle <br />","Name: Sasa Kalajdzic <br /> Team: Wolverhampton Wanderers <br /> Pos: Forward <br /> Injury: knee <br />"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,106,152,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,106,152,1)"}},"hoveron":"points","name":"Wolverhampton Wanderers","legendgroup":"Wolverhampton Wanderers","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":84.0182648401827},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Different Soccer Injuries Related to Position","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,4.6],"tickmode":"array","ticktext":["Defender","Forward","Goalkeeper","Midfielder"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["Defender","Forward","Goalkeeper","Midfielder"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Positions","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,14.6],"tickmode":"array","ticktext":["ankle","calf","chest","foot","hamstring","hand","head","heel","hip","knee","lower_back","other","shoulder","thigh"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14],"categoryorder":"array","categoryarray":["ankle","calf","chest","foot","hamstring","hand","head","heel","hip","knee","lower_back","other","shoulder","thigh"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Type of Injury","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Current Club","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"154ae6addf4eb":{"x":{},"y":{},"text":{},"colour":{},"type":"scatter"}},"cur_data":"154ae6addf4eb","visdat":{"154ae6addf4eb":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

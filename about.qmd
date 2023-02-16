@@ -1,37 +1,43 @@
 ---
 title: "About"
 ---
-
 # About Me
 
 My name is **Zayan Farooq**, and I am a current freshman at Walter Payton College Prep. My areas of interest are Computer Science, Physics, French, and Math. My hobbies are soccer, rock climbing, painting and drawing, and creating and building different things.
 
-## Contact Information
+# About My Project
+
+This project will examine the relationship between different soccer positions and the type of injuries correlated to where that player is playing on the field. Also, it will examine the amount of injuries correlated to age. 
+
+Soccer is a sport that is played by over 250 million people in over 200 different countries around the world. Soccer, also known as *futbol* in most parts of the world, is a game played on a field with 11 players per team, divided into three categories; **Forward, Midfield,** and **Defense**. The point of soccer is to get the ball into the opponents goal by only using your feet. There is also a goalkeeper with the task of blocking the ball from going into the goal. He is the only player on the field that can use his hands.
+
+One of the most common formations is 4-3-3. This means 4 defenders, 3 midfielders, and 3 offenders. The goalie is not included in the format, but is still on the field.
+
+## Positions
+
+### Goalkeeper
+
+  **1 goalie**
+
+### Defense:
+  
+  **Four Defenders**: Left Defense, Center Left Defense, Center Right Defense, and Right Defense
+
+
+### Midfield:
+  
+  **Three Midfielders**: Left Mid, Center Mid, and Right Mid
+
+
+### Forward
+  
+  **Three Offenders**: Left Wing, Striker, and Right Wing
+  
+  
+# Contact Information
 
 Email: Zfarooq08@icloud.com
 
 Github: https://github.com/Zfarooq08
-
-# About My Project
-
-This project will examine the relationship between different soccer positions and the type of injuries correlated to that area on the field. Soccer is a sport that is played by over 250 million people in over 200 different countries around the world. Soccer, also know as *futbol* in most parts of the world, is a game played on a field with 11 players per team, divided into three categories; **Offense, Midfield,** and **Defense.**
-
-One of the most common formations is 4-3-3. This means 4 defenders, 3 midfielders, and 3 offenders. The goalie is the only player on the field that can use their hands. The Goalie is not included in the format but is still on the field.
-
-## Positions
-
-### Offense:
-  
-  Three offenders; Left wing, Forward, and Right wing
-
-
-### Defense:
-  
-  Three midfielders; Left Mid, Center Mid, and Right Mid
-
-
-### Midfield
-  
-  Four Defenders; Left Defense, Center Left Defense, Center Right Defense, and Right Defense
 
 

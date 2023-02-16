@@ -1,6 +1,0 @@
----
-title: "Conclusion"
----
-
-
-From these various data plots about the main 6 Leagues, we can conclude that ... 

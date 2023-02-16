@@ -1,0 +1,36 @@
+---
+title: "Goalkeeper"
+editor: visual
+---
+For this graph, I took the **Part of Body** compared to the **Total Amount of Injuries** for the position of **Goalkeeper**
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(ggiraph)
+library(gganimate)
+library(dplyr)
+
+prem_league_stats <- read_excel("../Final-project/prem_league_stats.xlsx")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+prem_league_stats|>
+select(part_of_body, injury, goals_overall, position, `Current Club`, age, full_name)|>
+drop_na(part_of_body, injury)|>
+filter(position == "Goalkeeper")|>
+ggplot(mapping = aes(x = part_of_body,
+                     fill = injury)) +
+geom_bar(size = 1.75)+
+labs(title = "Different Soccer Injuries Related to the Goalkeeeper",
+     x = "Part of Body",
+     y = "Total number of Injuries")
+```
+From this, we can takeaway that goalkeepers experience more lower body thigh injuries.
+
+
